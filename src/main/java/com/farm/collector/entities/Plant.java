@@ -17,15 +17,15 @@ public class Plant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long plantId;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "field_id")
     private Field field;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "crop_id")
     private Crop crop;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "season_id")
     private Season season;
 

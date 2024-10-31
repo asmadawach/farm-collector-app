@@ -3,6 +3,8 @@ package com.farm.collector.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Table(name = "season")
 @Data
@@ -11,6 +13,6 @@ public class Season {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seasonId;
     private String seasonName;
-    @OneToOne(mappedBy = "season", cascade = CascadeType.ALL)
-    private Plant plant;
+    @OneToMany(mappedBy = "season", cascade = CascadeType.ALL)
+    private List<Plant> plants;
 }

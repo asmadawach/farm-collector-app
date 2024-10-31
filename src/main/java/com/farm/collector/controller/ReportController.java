@@ -3,6 +3,7 @@ package com.farm.collector.controller;
 import com.farm.collector.dto.response.ReportingDto;
 import com.farm.collector.service.ReportingService;
 import com.farm.collector.utils.CommonConstants;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,8 @@ public class ReportController {
      * @return a response entity containing a list of ReportingDto objects with report data
      */
     @GetMapping(CommonConstants.REPORTING)
-    public ResponseEntity<List<ReportingDto>> reporting() {
-        return ResponseEntity.ok(reportingService.reporting());
+    @Operation(summary = "Get all season reports")
+    public ResponseEntity<List<ReportingDto>> getAllPlantingAndHarvestingData() {
+        return ResponseEntity.ok(reportingService.getAllPlantingAndHarvestingData());
     }
 }

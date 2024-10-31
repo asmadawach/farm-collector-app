@@ -33,7 +33,7 @@ public class ReportingServiceImpl implements ReportingService {
      * @return a list of ReportingDto objects containing the reporting information for all plants.
      */
     @Override
-    public List<ReportingDto> reporting() {
+    public List<ReportingDto> getAllPlantingAndHarvestingData() {
         return plantRepository.findAll().stream()
                 .map(plant -> ReportingDto.builder()
                         .cropName(Optional.ofNullable(plant.getCrop()).map(Crop::getCropName).orElse(null))

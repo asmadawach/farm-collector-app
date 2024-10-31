@@ -1,7 +1,10 @@
 package com.farm.collector.service;
 
 import com.farm.collector.dto.request.PlantDto;
-import com.farm.collector.entities.*;
+import com.farm.collector.entities.Crop;
+import com.farm.collector.entities.Field;
+import com.farm.collector.entities.Plant;
+import com.farm.collector.entities.Season;
 import com.farm.collector.repository.CropRepository;
 import com.farm.collector.repository.FieldRepository;
 import com.farm.collector.repository.PlantRepository;

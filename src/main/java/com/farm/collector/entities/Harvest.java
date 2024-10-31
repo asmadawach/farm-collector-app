@@ -1,8 +1,10 @@
 package com.farm.collector.entities;
 
 import com.farm.collector.dto.request.HarvestDto;
-import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.persistence.*;
+
 
 @Entity
 @Table(name = "harvest")

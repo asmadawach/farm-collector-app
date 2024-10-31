@@ -1,7 +1,8 @@
 package com.farm.collector.entities;
 
-import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "farm")

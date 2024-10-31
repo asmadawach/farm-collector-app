@@ -1,9 +1,9 @@
 package com.farm.collector.entities;
 
 import com.farm.collector.dto.request.PlantDto;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 

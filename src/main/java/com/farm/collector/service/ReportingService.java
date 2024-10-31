@@ -5,5 +5,5 @@ import com.farm.collector.dto.response.ReportingDto;
 import java.util.List;
 
 public interface ReportingService {
-    List<ReportingDto> reporting();
+    List<ReportingDto> getAllPlantingAndHarvestingData();
 }

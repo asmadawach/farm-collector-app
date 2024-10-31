@@ -13,8 +13,9 @@ import org.springframework.http.ResponseEntity;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 class ReportControllerTest {
 
@@ -30,7 +31,7 @@ class ReportControllerTest {
     }
 
     @Test
-    void testReporting() {
+    void testGetAllPlantingAndHarvestingData() {
         // Given
         ReportingDto report1 = new ReportingDto();
 
@@ -38,13 +39,13 @@ class ReportControllerTest {
 
         List<ReportingDto> expectedReports = Arrays.asList(report1, report2);
 
-        when(reportingService.reporting()).thenReturn(expectedReports);
+        when(reportingService.getAllPlantingAndHarvestingData()).thenReturn(expectedReports);
 
         // When
-        ResponseEntity<List<ReportingDto>> response = reportController.reporting();
+        ResponseEntity<List<ReportingDto>> response = reportController.getAllPlantingAndHarvestingData();
 
         // Then
-        verify(reportingService).reporting();
+        verify(reportingService).getAllPlantingAndHarvestingData();
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(expectedReports, response.getBody());
     }

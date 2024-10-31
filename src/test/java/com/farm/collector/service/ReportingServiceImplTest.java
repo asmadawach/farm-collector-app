@@ -30,7 +30,7 @@ public class ReportingServiceImplTest {
     }
 
     @Test
-    public void testReporting() {
+    public void testGetAllPlantingAndHarvestingData() {
         // Given
         Crop crop = new Crop();
         crop.setCropName("Wheat");
@@ -67,7 +67,7 @@ public class ReportingServiceImplTest {
         when(plantRepository.findAll()).thenReturn(Arrays.asList(plant1, plant2));
 
         // When
-        List<ReportingDto> report = reportingService.reporting();
+        List<ReportingDto> report = reportingService.getAllPlantingAndHarvestingData();
 
         // Then
         assertEquals(2, report.size());
